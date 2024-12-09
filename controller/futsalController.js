@@ -10,3 +10,12 @@ export const createFutsal = async (req, res) => {
         return res.status(500).json({ msg: "Internal server error" })
     }
 }
+//Route 2: Display all futsal
+export const displayFutsal = async (req, res) => {
+    try {
+        const futsal = await Futsal.find({})
+        return res.status(200).json({ futsal })
+    } catch (error) {
+        return res.status(500).json({ msg: "Internal server error" })
+    }
+}
